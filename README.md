@@ -10,4 +10,4 @@
 
 ## Brain-calc
 
-<script id="asciicast-3mumhEbZMZANwQfDXrEQ13IB7" src="https://asciinema.org/a/3mumhEbZMZANwQfDXrEQ13IB7.js" async></script>
+[![asciicast](https://asciinema.org/a/3mumhEbZMZANwQfDXrEQ13IB7.svg)](https://asciinema.org/a/3mumhEbZMZANwQfDXrEQ13IB7)
