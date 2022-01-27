@@ -12,7 +12,6 @@ const createNumberConsitions = () => {
   let expectedAnswer = 1;
 
   for (let i = minNumber; i >= 1; i -= 1) {
-    console.log(i);
     if ((firstNumber % i === 0) && (secondNumber % i === 0)) {
       expectedAnswer = i;
       break;
