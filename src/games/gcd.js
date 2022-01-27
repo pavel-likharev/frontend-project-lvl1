@@ -1,12 +1,7 @@
-import { createNumber } from '../utilits.js';
+import { baseMultiplier, createNumber } from '../utilits.js';
 
-const createExpression = () => {
-  const expression = `${createNumber()} ${createNumber()}`;
-
-  return expression;
-};
-
-const createExpectedAnswer = (expression) => {
+const createNumberConsitions = () => {
+  const expression = `${createNumber(baseMultiplier)} ${createNumber(baseMultiplier)}`;
   const separator = ' ';
   const numbers = expression.split(separator);
   const [first, second] = numbers;
@@ -14,21 +9,26 @@ const createExpectedAnswer = (expression) => {
   const secondNumber = Number(second);
   const minNumber = firstNumber >= secondNumber ? secondNumber : firstNumber;
 
+  let expectedAnswer = 1;
+
   for (let i = minNumber; i >= 1; i -= 1) {
+    console.log(i);
     if ((firstNumber % i === 0) && (secondNumber % i === 0)) {
-      return String(i);
+      expectedAnswer = i;
+      break;
     }
   }
 
-  return String(1);
+  const numberConsitions = [expression, String(expectedAnswer)];
+
+  return numberConsitions;
 };
 
 const createGcdGameConsitions = () => {
   const gameRule = 'Find the greatest common divisor of given numbers.';
-  const expression = createExpression;
-  const expectedAnswer = createExpectedAnswer;
-  const conditions = [gameRule, expression, expectedAnswer];
-  return conditions;
+  const consitions = [gameRule, createNumberConsitions];
+
+  return consitions;
 };
 
 export default createGcdGameConsitions;
