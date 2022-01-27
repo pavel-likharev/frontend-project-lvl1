@@ -1,19 +1,12 @@
 import { baseMultiplier, createNumber } from '../utilits.js';
 
 const isSimpleNumber = (number) => {
-  const dividers = [1];
-
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
-      dividers.push(i);
+      return 'no';
     }
   }
-
-  if (dividers.length === 1) {
-    return 'yes';
-  }
-
-  return 'no';
+  return 'yes';
 };
 
 const createNumberConsitions = () => {
