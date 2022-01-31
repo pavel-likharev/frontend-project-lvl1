@@ -1,6 +1,7 @@
 import { baseMultiplier, maxProgressionIndex, createNumber } from '../utilits.js';
 import createSomeGame from '../index.js';
 
+const gameRule = 'What number is missing in the progression?';
 const progressionLength = 9;
 
 const createLineNumbers = () => {
@@ -33,8 +34,6 @@ const createGameConsitions = () => {
 };
 
 const createProgressionGame = () => {
-  const gameRule = 'What number is missing in the progression?';
-
   createSomeGame(gameRule, createGameConsitions);
 };
 
