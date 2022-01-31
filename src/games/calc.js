@@ -3,29 +3,26 @@ import createSomeGame from '../index.js';
 
 const operators = ['+', '-', '*'];
 
-const createGameConsitions = () => {
-  const expression = `${createNumber(baseMultiplier)} ${operators[createOperatorIndex(operators.length)]} ${createNumber(baseMultiplier)}`;
-  const separator = ' ';
-  const expressionSymbols = expression.split(separator);
-  const [first, operator, second] = expressionSymbols;
-  const firstNumber = Number(first);
-  const secondNumber = Number(second);
-
-  let expectedAnswer;
-
+const calcNumbers = (firstNumber, secondNumber, operator) => {
   switch (operator) {
     case '+':
-      expectedAnswer = firstNumber + secondNumber;
-      break;
+      return firstNumber + secondNumber;
     case '-':
-      expectedAnswer = firstNumber - secondNumber;
-      break;
+      return firstNumber - secondNumber;
     case '*':
-      expectedAnswer = firstNumber * secondNumber;
-      break;
+      return firstNumber * secondNumber;
     default:
-      break;
+      return '';
   }
+};
+
+const createGameConsitions = () => {
+  const firstNumber = createNumber(baseMultiplier);
+  const secondNumber = createNumber(baseMultiplier);
+  const operator = operators[createOperatorIndex(operators.length)];
+
+  const expression = `${firstNumber} ${operator} ${secondNumber}`;
+  const expectedAnswer = calcNumbers(firstNumber, secondNumber, operator);
 
   const numberConsitions = [expression, String(expectedAnswer)];
 
