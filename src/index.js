@@ -2,7 +2,6 @@ import readlineSync from 'readline-sync';
 
 const createSomeGame = (gameRule, createGameConsitions) => {
   const questionCount = 3;
-  let i = 0;
 
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
@@ -10,7 +9,7 @@ const createSomeGame = (gameRule, createGameConsitions) => {
 
   console.log(gameRule);
 
-  for (; i < questionCount; i += 1) {
+  for (let i = 0; i < questionCount; i += 1) {
     const numberConsitions = createGameConsitions();
     const [expression, expectedAnswer] = numberConsitions;
 
@@ -20,16 +19,13 @@ const createSomeGame = (gameRule, createGameConsitions) => {
 
     if (answer !== expectedAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      break;
-    } else {
-      console.log('Correct!');
+      return console.log(`Let's try again, ${userName}!`);
     }
+
+    console.log('Correct!');
   }
 
-  if (i === questionCount) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default createSomeGame;
