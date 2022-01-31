@@ -1,9 +1,9 @@
-const baseMultiplier = 100;
-const maxProgressionIndex = 5;
+const minMultiplier = 1;
+const maxMultiplier = 100;
 
-const createNumber = (multiplier) => Math.ceil((Math.random() * multiplier));
-const createOperatorIndex = (length) => Math.round(Math.random() * (length - 1));
-
-export {
-  baseMultiplier, maxProgressionIndex, createNumber, createOperatorIndex,
+const createNumber = (min, max) => {
+  const number = min + Math.random() * (max + 1 - min);
+  return Math.floor(number);
 };
+
+export { minMultiplier, maxMultiplier, createNumber };

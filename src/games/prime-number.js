@@ -1,4 +1,4 @@
-import { baseMultiplier, createNumber } from '../utilits.js';
+import { minMultiplier, maxMultiplier, createNumber } from '../utilits.js';
 import createSomeGame from '../index.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -13,11 +13,11 @@ const isSimpleNumber = (number) => {
 };
 
 const createGameConsitions = () => {
-  const expression = createNumber(baseMultiplier);
+  const expression = createNumber(minMultiplier, maxMultiplier);
   const expectedAnswer = isSimpleNumber(expression);
-  const numberConsitions = [expression, String(expectedAnswer)];
+  const gameConsitions = [expression, String(expectedAnswer)];
 
-  return numberConsitions;
+  return gameConsitions;
 };
 
 const createPrimeGameConsitions = () => {

@@ -1,4 +1,4 @@
-import { baseMultiplier, createNumber, createOperatorIndex } from '../utilits.js';
+import { minMultiplier, maxMultiplier, createNumber } from '../utilits.js';
 import createSomeGame from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
@@ -18,16 +18,16 @@ const calcNumbers = (firstNumber, secondNumber, operator) => {
 };
 
 const createGameConsitions = () => {
-  const firstNumber = createNumber(baseMultiplier);
-  const secondNumber = createNumber(baseMultiplier);
-  const operator = operators[createOperatorIndex(operators.length)];
+  const firstNumber = createNumber(minMultiplier, maxMultiplier);
+  const secondNumber = createNumber(minMultiplier, maxMultiplier);
+  const operator = operators[createNumber(0, (operators.length - 1))];
 
   const expression = `${firstNumber} ${operator} ${secondNumber}`;
   const expectedAnswer = calcNumbers(firstNumber, secondNumber, operator);
 
-  const numberConsitions = [expression, String(expectedAnswer)];
+  const gameConsitions = [expression, String(expectedAnswer)];
 
-  return numberConsitions;
+  return gameConsitions;
 };
 
 const createCalcGame = () => {

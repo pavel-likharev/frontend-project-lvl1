@@ -1,16 +1,18 @@
-import { baseMultiplier, maxProgressionIndex, createNumber } from '../utilits.js';
+import { minMultiplier, maxMultiplier, createNumber } from '../utilits.js';
 import createSomeGame from '../index.js';
 
 const gameRule = 'What number is missing in the progression?';
 const progressionLength = 9;
+const minProsressionIndex = 1;
+const maxProgressionIndex = 5;
 
 const createLineNumbers = () => {
-  const startNumber = createNumber(baseMultiplier);
-  const progressionIndex = createNumber(maxProgressionIndex);
+  const startNumber = createNumber(minMultiplier, maxMultiplier);
+  const progressionIndex = createNumber(minProsressionIndex, maxProgressionIndex);
   let currentNumber = startNumber;
   const lineNumbers = [startNumber];
 
-  for (let i = 0; i <= progressionLength; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     currentNumber += progressionIndex;
     lineNumbers.push(currentNumber);
   }
@@ -21,16 +23,16 @@ const createLineNumbers = () => {
 const createGameConsitions = () => {
   const separator = ' ';
   const lineNumbers = createLineNumbers();
-  const hiddenNumberIndex = createNumber(progressionLength);
+  const hiddenNumberIndex = createNumber(0, progressionLength - 1);
   const hiddenNumber = lineNumbers[hiddenNumberIndex];
   lineNumbers[hiddenNumberIndex] = '..';
 
   const expression = lineNumbers.join(separator);
   const expectedAnswer = String(hiddenNumber);
 
-  const numberConsitions = [expression, expectedAnswer];
+  const gameConsitions = [expression, expectedAnswer];
 
-  return numberConsitions;
+  return gameConsitions;
 };
 
 const createProgressionGame = () => {
