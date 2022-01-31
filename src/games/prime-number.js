@@ -1,4 +1,6 @@
 import { baseMultiplier, createNumber } from '../utilits.js';
+import createWelcome from '../cli.js';
+import createSomeGame from '../index.js';
 
 const isSimpleNumber = (number) => {
   for (let i = 2; i <= number / 2; i += 1) {
@@ -9,7 +11,7 @@ const isSimpleNumber = (number) => {
   return 'yes';
 };
 
-const createNumberConsitions = () => {
+const createGameConsitions = () => {
   const expression = createNumber(baseMultiplier);
   const expectedAnswer = isSimpleNumber(expression);
   const numberConsitions = [expression, String(expectedAnswer)];
@@ -19,9 +21,8 @@ const createNumberConsitions = () => {
 
 const createPrimeGameConsitions = () => {
   const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const consitions = [gameRule, createNumberConsitions];
 
-  return consitions;
+  createSomeGame(createWelcome, gameRule, createGameConsitions);
 };
 
 export default createPrimeGameConsitions;

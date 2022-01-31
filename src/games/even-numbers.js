@@ -1,8 +1,10 @@
 import { baseMultiplier, createNumber } from '../utilits.js';
+import createWelcome from '../cli.js';
+import createSomeGame from '../index.js';
 
 const isParityNumber = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
-const createNumberConsitions = () => {
+const createGameConsitions = () => {
   const expression = createNumber(baseMultiplier);
   const expectedAnswer = isParityNumber(expression);
   const numberConsitions = [expression, String(expectedAnswer)];
@@ -10,11 +12,10 @@ const createNumberConsitions = () => {
   return numberConsitions;
 };
 
-const createEvenGameConsitions = () => {
+const createEvenGame = () => {
   const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const consitions = [gameRule, createNumberConsitions];
 
-  return consitions;
+  createSomeGame(createWelcome, gameRule, createGameConsitions);
 };
 
-export default createEvenGameConsitions;
+export default createEvenGame;

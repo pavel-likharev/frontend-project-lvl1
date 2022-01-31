@@ -1,14 +1,14 @@
 import readlineSync from 'readline-sync';
 
-const createGame = (userName, gameСonditions) => {
-  const [gameRule, createNumberConsitions] = gameСonditions;
+const createSomeGame = (findUserName, gameRule, createGameConsitions) => {
+  const userName = findUserName();
   const questionCount = 3;
   let i = 0;
 
   console.log(gameRule);
 
   for (; i < questionCount; i += 1) {
-    const numberConsitions = createNumberConsitions();
+    const numberConsitions = createGameConsitions();
     const [expression, expectedAnswer] = numberConsitions;
 
     console.log(`Question: ${expression}`);
@@ -29,4 +29,4 @@ const createGame = (userName, gameСonditions) => {
   }
 };
 
-export default createGame;
+export default createSomeGame;

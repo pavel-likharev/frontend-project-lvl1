@@ -1,6 +1,8 @@
 import { baseMultiplier, createNumber } from '../utilits.js';
+import createWelcome from '../cli.js';
+import createSomeGame from '../index.js';
 
-const createNumberConsitions = () => {
+const createGameConsitions = () => {
   const expression = `${createNumber(baseMultiplier)} ${createNumber(baseMultiplier)}`;
   const separator = ' ';
   const numbers = expression.split(separator);
@@ -23,11 +25,10 @@ const createNumberConsitions = () => {
   return numberConsitions;
 };
 
-const createGcdGameConsitions = () => {
+const createGcdGame = () => {
   const gameRule = 'Find the greatest common divisor of given numbers.';
-  const consitions = [gameRule, createNumberConsitions];
 
-  return consitions;
+  createSomeGame(createWelcome, gameRule, createGameConsitions);
 };
 
-export default createGcdGameConsitions;
+export default createGcdGame;
