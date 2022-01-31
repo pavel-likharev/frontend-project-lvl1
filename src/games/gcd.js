@@ -2,12 +2,8 @@ import { baseMultiplier, createNumber } from '../utilits.js';
 import createSomeGame from '../index.js';
 
 const createGameConsitions = () => {
-  const expression = `${createNumber(baseMultiplier)} ${createNumber(baseMultiplier)}`;
-  const separator = ' ';
-  const numbers = expression.split(separator);
-  const [first, second] = numbers;
-  const firstNumber = Number(first);
-  const secondNumber = Number(second);
+  const firstNumber = createNumber(baseMultiplier);
+  const secondNumber = createNumber(baseMultiplier);
   const minNumber = firstNumber >= secondNumber ? secondNumber : firstNumber;
 
   let expectedAnswer = 1;
@@ -19,7 +15,7 @@ const createGameConsitions = () => {
     }
   }
 
-  const numberConsitions = [expression, String(expectedAnswer)];
+  const numberConsitions = [`${firstNumber} ${secondNumber}`, String(expectedAnswer)];
 
   return numberConsitions;
 };
