@@ -1,5 +1,4 @@
 import { baseMultiplier, createNumber, createOperatorIndex } from '../utilits.js';
-import createWelcome from '../cli.js';
 import createSomeGame from '../index.js';
 
 const operators = ['+', '-', '*'];
@@ -36,7 +35,7 @@ const createGameConsitions = () => {
 const createCalcGame = () => {
   const gameRule = 'What is the result of the expression?';
 
-  createSomeGame(createWelcome, gameRule, createGameConsitions);
+  createSomeGame(gameRule, createGameConsitions);
 };
 
 export default createCalcGame;

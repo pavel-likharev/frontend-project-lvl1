@@ -1,5 +1,4 @@
 import { baseMultiplier, createNumber } from '../utilits.js';
-import createWelcome from '../cli.js';
 import createSomeGame from '../index.js';
 
 const isSimpleNumber = (number) => {
@@ -22,7 +21,7 @@ const createGameConsitions = () => {
 const createPrimeGameConsitions = () => {
   const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  createSomeGame(createWelcome, gameRule, createGameConsitions);
+  createSomeGame(gameRule, createGameConsitions);
 };
 
 export default createPrimeGameConsitions;

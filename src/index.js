@@ -1,9 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const createSomeGame = (findUserName, gameRule, createGameConsitions) => {
-  const userName = findUserName();
+const createSomeGame = (gameRule, createGameConsitions) => {
   const questionCount = 3;
   let i = 0;
+
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
 
   console.log(gameRule);
 

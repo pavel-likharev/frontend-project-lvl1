@@ -1,5 +1,4 @@
 import { baseMultiplier, createNumber } from '../utilits.js';
-import createWelcome from '../cli.js';
 import createSomeGame from '../index.js';
 
 const isParityNumber = (number) => (number % 2 === 0 ? 'yes' : 'no');
@@ -15,7 +14,7 @@ const createGameConsitions = () => {
 const createEvenGame = () => {
   const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  createSomeGame(createWelcome, gameRule, createGameConsitions);
+  createSomeGame(gameRule, createGameConsitions);
 };
 
 export default createEvenGame;
