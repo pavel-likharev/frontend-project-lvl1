@@ -3,9 +3,7 @@ import createSomeGame from '../index.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
-const createGameConsitions = () => {
-  const firstNumber = genereateRandomNumber();
-  const secondNumber = genereateRandomNumber();
+const searchCommonDivisor = (firstNumber, secondNumber) => {
   const minNumber = firstNumber >= secondNumber ? secondNumber : firstNumber;
 
   let expectedAnswer = 1;
@@ -16,6 +14,14 @@ const createGameConsitions = () => {
       break;
     }
   }
+
+  return expectedAnswer;
+};
+
+const createGameConsitions = () => {
+  const firstNumber = genereateRandomNumber();
+  const secondNumber = genereateRandomNumber();
+  const expectedAnswer = searchCommonDivisor(firstNumber, secondNumber);
 
   const gameConsitions = [`${firstNumber} ${secondNumber}`, String(expectedAnswer)];
 
