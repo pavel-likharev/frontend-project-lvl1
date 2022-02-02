@@ -10,8 +10,7 @@ const createSomeGame = (gameRule, createGameConsitions) => {
   console.log(gameRule);
 
   for (let i = 0; i < questionCount; i += 1) {
-    const numberConsitions = createGameConsitions();
-    const [expression, expectedAnswer] = numberConsitions;
+    const [expression, expectedAnswer] = createGameConsitions();
 
     console.log(`Question: ${expression}`);
 
@@ -19,13 +18,14 @@ const createSomeGame = (gameRule, createGameConsitions) => {
 
     if (answer !== expectedAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
-      return console.log(`Let's try again, ${userName}!`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
 
     console.log('Correct!');
   }
 
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default createSomeGame;
