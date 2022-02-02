@@ -1,11 +1,11 @@
-import { minMultiplier, maxMultiplier, createNumber } from '../utilits.js';
+import { genereateRandomNumber } from '../utilits.js';
 import createSomeGame from '../index.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
 const createGameConsitions = () => {
-  const firstNumber = createNumber(minMultiplier, maxMultiplier);
-  const secondNumber = createNumber(minMultiplier, maxMultiplier);
+  const firstNumber = genereateRandomNumber();
+  const secondNumber = genereateRandomNumber();
   const minNumber = firstNumber >= secondNumber ? secondNumber : firstNumber;
 
   let expectedAnswer = 1;

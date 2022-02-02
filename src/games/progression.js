@@ -1,4 +1,4 @@
-import { minMultiplier, maxMultiplier, createNumber } from '../utilits.js';
+import { genereateRandomNumber } from '../utilits.js';
 import createSomeGame from '../index.js';
 
 const gameRule = 'What number is missing in the progression?';
@@ -7,8 +7,8 @@ const minProsressionIndex = 1;
 const maxProgressionIndex = 5;
 
 const createLineNumbers = () => {
-  const startNumber = createNumber(minMultiplier, maxMultiplier);
-  const progressionIndex = createNumber(minProsressionIndex, maxProgressionIndex);
+  const startNumber = genereateRandomNumber();
+  const progressionIndex = genereateRandomNumber(minProsressionIndex, maxProgressionIndex);
   let currentNumber = startNumber;
   const lineNumbers = [startNumber];
 
@@ -23,7 +23,7 @@ const createLineNumbers = () => {
 const createGameConsitions = () => {
   const separator = ' ';
   const lineNumbers = createLineNumbers();
-  const hiddenNumberIndex = createNumber(0, progressionLength - 1);
+  const hiddenNumberIndex = genereateRandomNumber(0, progressionLength - 1);
   const hiddenNumber = lineNumbers[hiddenNumberIndex];
   lineNumbers[hiddenNumberIndex] = '..';
 
