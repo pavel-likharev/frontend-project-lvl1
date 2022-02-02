@@ -13,7 +13,7 @@ const calcNumbers = (firstNumber, secondNumber, operator) => {
     case '*':
       return firstNumber * secondNumber;
     default:
-      return '';
+      throw new Error(`Unknown order state: '${operator}'!`);
   }
 };
 
