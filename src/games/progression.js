@@ -30,9 +30,7 @@ const createGameConsitions = () => {
   const expression = lineNumbers.join(separator);
   const expectedAnswer = String(hiddenNumber);
 
-  const gameConsitions = [expression, expectedAnswer];
-
-  return gameConsitions;
+  return [expression, expectedAnswer];
 };
 
 const createProgressionGame = () => {

@@ -14,10 +14,9 @@ const isSimpleNumber = (number) => {
 
 const createGameConsitions = () => {
   const expression = genereateRandomNumber();
-  const expectedAnswer = isSimpleNumber(expression);
-  const gameConsitions = [expression, String(expectedAnswer)];
+  const expectedAnswer = String(isSimpleNumber(expression));
 
-  return gameConsitions;
+  return [expression, expectedAnswer];
 };
 
 const createPrimeGameConsitions = () => {

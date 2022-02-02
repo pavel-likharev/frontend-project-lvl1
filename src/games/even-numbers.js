@@ -7,10 +7,9 @@ const isParityNumber = (number) => number % 2 === 0;
 
 const createGameConsitions = () => {
   const expression = genereateRandomNumber();
-  const expectedAnswer = isParityNumber(expression) ? 'yes' : 'no';
-  const gameConsitions = [expression, String(expectedAnswer)];
+  const expectedAnswer = String(isParityNumber(expression) ? 'yes' : 'no');
 
-  return gameConsitions;
+  return [expression, expectedAnswer];
 };
 
 const createEvenGame = () => {

@@ -21,11 +21,11 @@ const searchCommonDivisor = (firstNumber, secondNumber) => {
 const createGameConsitions = () => {
   const firstNumber = genereateRandomNumber();
   const secondNumber = genereateRandomNumber();
-  const expectedAnswer = searchCommonDivisor(firstNumber, secondNumber);
 
-  const gameConsitions = [`${firstNumber} ${secondNumber}`, String(expectedAnswer)];
+  const expression = `${firstNumber} ${secondNumber}`;
+  const expectedAnswer = String(searchCommonDivisor(firstNumber, secondNumber));
 
-  return gameConsitions;
+  return [expression, expectedAnswer];
 };
 
 const createGcdGame = () => {

@@ -23,11 +23,9 @@ const createGameConsitions = () => {
   const operator = operators[genereateRandomNumber(0, (operators.length - 1))];
 
   const expression = `${firstNumber} ${operator} ${secondNumber}`;
-  const expectedAnswer = calcNumbers(firstNumber, secondNumber, operator);
+  const expectedAnswer = String(calcNumbers(firstNumber, secondNumber, operator));
 
-  const gameConsitions = [expression, String(expectedAnswer)];
-
-  return gameConsitions;
+  return [expression, expectedAnswer];
 };
 
 const createCalcGame = () => {
