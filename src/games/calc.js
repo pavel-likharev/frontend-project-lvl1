@@ -1,4 +1,4 @@
-import { genereateRandomNumber } from '../utilits.js';
+import genereateRandomNumber from '../utilits.js';
 import createSomeGame from '../index.js';
 
 const gameRule = 'What is the result of the expression?';

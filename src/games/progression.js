@@ -1,35 +1,33 @@
-import { genereateRandomNumber } from '../utilits.js';
+import genereateRandomNumber from '../utilits.js';
 import createSomeGame from '../index.js';
 
 const gameRule = 'What number is missing in the progression?';
 const minProsressionIndex = 1;
 const maxProgressionIndex = 5;
+const minProsressionLength = 6;
+const maxProsressionLength = 10;
 
-const createProgressionFromNumber = (startNumber, progressionIndex) => {
-  const progressionLength = 9;
+const createProgressionFromNumber = (startNumber, progressionIndex, progressionLength) => {
   const progressionOfNumbers = [startNumber];
 
-  let currentNumber = startNumber;
-
-  for (let i = 0; i < progressionLength; i += 1) {
-    currentNumber += progressionIndex;
-    progressionOfNumbers.push(currentNumber);
+  for (let i = 0; i < progressionLength - 1; i += 1) {
+    progressionOfNumbers.push(progressionOfNumbers[i] + progressionIndex);
   }
 
   return progressionOfNumbers;
 };
 
 const createGameConsitions = () => {
-  const separator = ' ';
   const startNumber = genereateRandomNumber();
   const progressionIndex = genereateRandomNumber(minProsressionIndex, maxProgressionIndex);
+  const progressionLength = genereateRandomNumber(minProsressionLength, maxProsressionLength);
 
-  const lineNumbers = createProgressionFromNumber(startNumber, progressionIndex);
+  const lineNumbers = createProgressionFromNumber(startNumber, progressionIndex, progressionLength);
   const hiddenNumberIndex = genereateRandomNumber(0, lineNumbers.length - 1);
   const hiddenNumber = lineNumbers[hiddenNumberIndex];
   lineNumbers[hiddenNumberIndex] = '..';
 
-  const expression = lineNumbers.join(separator);
+  const expression = lineNumbers.join(' ');
   const expectedAnswer = String(hiddenNumber);
 
   return [expression, expectedAnswer];
