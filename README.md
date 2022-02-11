@@ -15,18 +15,23 @@
 
 ## Установка и запуск проекта
 
-Для установки проекта:
+Установка проекта
 
-- скопируйте данный репозиторий;
-- установите зависимости в корневом каталоге командой 'make install';
+```
+git copy https://github.com/pavel-likharev/frontend-project-lvl1.git;
+cd frontend-project-lvl1;
+make install;
+```
 
 Для запуска нужной игры используйте соответствующую команду:
 
-- make brain-even;
-- make brain-calc;
-- make brain-gcd;
-- make brain-progression;
-- make brain-prime;
+```
+make brain-even;
+make brain-calc;
+make brain-gcd;
+make brain-progression;
+make brain-prime;
+```
 
 ## Описание и демонстарация игр
 
