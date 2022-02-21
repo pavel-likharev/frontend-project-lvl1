@@ -6,8 +6,8 @@
 
 ## Учебный проект #1 программы обучения Hexlet 'Фронтенд-разработчик'
 
-В проекте представлена работа программ, запускаемых в REPl.
-Представлен набор из пяти консольных арифметических игр. В ходе каждой необходимо трижды дать правильный ответ, чтобы выиграть.
+В проекте представлена работа программ, запускаемых в терминале.
+Представлен набор из пяти арифметических игр. В ходе каждой необходимо трижды дать правильный ответ, чтобы выиграть.
 
 ## Требования
 
@@ -18,19 +18,19 @@
 Установка проекта
 
 ```
-git copy https://github.com/pavel-likharev/frontend-project-lvl1.git;
-cd frontend-project-lvl1;
-make install;
+git clone https://github.com/pavel-likharev/frontend-project-lvl1.git
+cd frontend-project-lvl1
+make install
 ```
 
 Для запуска нужной игры используйте соответствующую команду:
 
 ```
-make brain-even;
-make brain-calc;
-make brain-gcd;
-make brain-progression;
-make brain-prime;
+make brain-even
+make brain-calc
+make brain-gcd
+make brain-progression
+make brain-prime
 ```
 
 ## Описание и демонстарация игр
